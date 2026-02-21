@@ -1,0 +1,17 @@
+# LeetCode 121 - Best Time to Buy and Sell Stock
+# Topic: Arrays, Greedy
+# Difficulty: Easy
+# Time Complexity: O(n)
+# Space Complexity: O(1)
+
+class Solution:
+    def maxProfit(self, prices):
+        min_price = float('inf')
+        max_profit = 0
+
+        for price in prices:
+            min_price = min(min_price, price)
+            profit = price - min_price
+            max_profit = max(max_profit, profit)
+
+        return max_profit
