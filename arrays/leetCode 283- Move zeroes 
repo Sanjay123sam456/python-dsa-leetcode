@@ -1,0 +1,20 @@
+# LeetCode 283 - Move Zeroes
+# Topic: Arrays, Two Pointers
+# Difficulty: Easy
+# Time Complexity: O(n)
+# Space Complexity: O(1)
+
+class Solution:
+    def moveZeroes(self, nums):
+        insert_pos = 0
+        
+        # Move all non-zero elements forward
+        for num in nums:
+            if num != 0:
+                nums[insert_pos] = num
+                insert_pos += 1
+        
+        # Fill remaining positions with zeros
+        while insert_pos < len(nums):
+            nums[insert_pos] = 0
+            insert_pos += 1
